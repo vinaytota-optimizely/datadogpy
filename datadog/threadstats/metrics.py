@@ -125,7 +125,7 @@ class MetricsAggregator(object):
     """
 
     def __init__(self, roll_up_interval=10):
-        self._metrics = defaultdict(lambda: {})
+        self._metrics = defaultdict(dict)
         self._roll_up_interval = roll_up_interval
 
     def add_point(self, metric, tags, timestamp, value, metric_class, sample_rate=1, host=None):
